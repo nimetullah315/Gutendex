@@ -1,0 +1,357 @@
+/* ========= RESET ========= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+body {
+  background: black;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+/* ========= NAVBAR ========= */
+
+nav {
+  width: 100%;
+  min-height: 80px;
+
+  background-color: #f4f4f6;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  gap: 10px;
+  padding: 10px;
+}
+
+.linkButton {
+  color: white;
+  text-decoration: none;
+
+  background: #66666e;
+
+  padding: 10px 15px;
+
+  border-radius: 10px;
+  border: 1px solid;
+
+  transition: 0.3s;
+}
+
+.linkButton:hover {
+  background: #9197ae;
+  color: black;
+
+  box-shadow:
+    1px 1px 3px #9999a1,
+    1px 1px 3px #f4f4f6;
+}
+
+.heart {
+  color: white;
+  text-decoration: none;
+  padding: 5px 10px;
+
+  transition: 0.3s;
+}
+
+.heart:hover {
+  transform: scale(1.3);
+}
+
+/* ========= SEARCH ========= */
+
+.searchBar {
+  width: 100%;
+  max-width: 350px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.searchBar input {
+  flex: 1;
+
+  height: 38px;
+
+  padding: 0 10px;
+
+  border-radius: 10px;
+  border: 1px solid #9999a1;
+
+  outline: none;
+}
+
+.searchBar input:focus {
+  outline: 1px solid #9999a1;
+}
+
+/* ========= HOME ========= */
+
+.home {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 15px;
+}
+
+/* ========= CATEGORY ========= */
+
+.category {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+
+  margin-bottom: 15px;
+}
+
+.category select {
+  padding: 8px 12px;
+  border-radius: 10px;
+}
+
+/* ========= BOOK LIST ========= */
+
+.bookTitle {
+  width: min(600px, 95%);
+
+  margin: 5px auto;
+  padding: 12px;
+
+  border: 1px solid #66666e;
+  border-radius: 8px;
+
+  text-align: left;
+
+  overflow-wrap: break-word;
+  word-break: break-word;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.bookTitle:hover {
+  background: #333;
+}
+
+/* ========= PAGINATION ========= */
+
+.navButton {
+  width: min(600px, 95%);
+
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+
+  margin-top: 20px;
+}
+
+.navButton button {
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+/* ========= BOOK DETAILS ========= */
+
+.bookDetails {
+  width: min(320px, 95%);
+
+  margin: 20px auto;
+  padding: 15px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 10px;
+
+  border-radius: 10px;
+}
+
+.bookDetails:hover {
+  border: 1px solid white;
+}
+
+.bookDetails img {
+  width: 140px;
+  height: auto;
+
+  border-radius: 5px;
+}
+
+.bookDetails h2,
+.bookDetails h3 {
+  text-align: center;
+}
+
+.bookDetails h4 {
+  width: 100%;
+  text-align: left;
+
+  overflow-wrap: break-word;
+}
+
+.bookDetails a {
+  color: white;
+}
+
+.controlBtns {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+
+  margin-top: 10px;
+}
+
+.controlBtns button {
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* ========= FAVOURITES ========= */
+
+.favouriteBooks {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 20px;
+}
+
+.favouriteCard {
+  width: min(500px, 95%);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 12px;
+
+  border: 1px solid #66666e;
+  border-radius: 10px;
+
+  background: #1a1a1a;
+}
+
+.favouriteCard:hover {
+  background: #333;
+}
+
+.favouriteCard h3 {
+  flex: 1;
+
+  text-align: left;
+
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.favouriteCard button {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+/* ========= TABLET ========= */
+
+@media (max-width: 768px) {
+  .bookTitle,
+  .navButton,
+  .favouriteCard {
+    width: 95%;
+  }
+
+  .searchBar {
+    max-width: 100%;
+  }
+}
+
+/* ========= MOBILE ========= */
+
+@media (max-width: 480px) {
+  nav {
+    flex-direction: column;
+  }
+
+  .searchBar {
+    width: 95%;
+    max-width: none;
+  }
+
+  .navButton {
+    flex-direction: column;
+  }
+
+  .navButton button {
+    width: 100%;
+  }
+
+  .bookDetails {
+    width: 95%;
+  }
+
+  .controlBtns {
+    flex-direction: column;
+  }
+
+  .controlBtns button {
+    width: 100%;
+  }
+
+  .favouriteCard {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .favouriteCard button {
+    width: 100%;
+  }
+
+  .linkButton {
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+  }
+}
+
+/* ========= VERY SMALL PHONES ========= */
+
+@media (max-width: 320px) {
+  .bookTitle,
+  .bookDetails,
+  .favouriteCard,
+  .searchBar,
+  .navButton {
+    width: 100%;
+  }
+
+  .bookDetails img {
+    width: 110px;
+  }
+}
