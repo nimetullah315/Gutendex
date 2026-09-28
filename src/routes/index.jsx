@@ -7,7 +7,7 @@ import ErrorPage from "../pages/ErrorPage";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/gutendex",
     element: <App />,
     errorElement: <ErrorPage />,
     children: [
