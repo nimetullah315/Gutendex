@@ -5,29 +5,31 @@ import BookDetails from "../pages/BookDetails";
 import FavourateBooks from "../pages/FavourateBooks";
 import ErrorPage from "../pages/ErrorPage";
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <App />,
+      errorElement: <ErrorPage />,
+      children: [
+        {
+          index: true,
+          element: <Home />,
+        },
+        {
+          path: "book/:id",
+          element: <BookDetails />,
+        },
+        {
+          path: "favourates",
+          element: <FavourateBooks />,
+        },
+      ],
+    },
+  ],
   {
-    path: "/gutendex",
-    element: <App />,
-    errorElement: <ErrorPage />,
-    children: [
-      {
-        index: true,
-        element: <Home />,
-      },
-      {
-        path: "book/:id",
-        element: <BookDetails />,
-      },
-      {
-        path: "/favourates",
-        element: <FavourateBooks />,
-      },
-    ],
-    
-        basename: import.meta.env.BASE_URL,
-    
-  },
-]);
+    basename: import.meta.env.BASE_URL,
+  }
+);
 
 export { router };
