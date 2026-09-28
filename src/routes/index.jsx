@@ -24,6 +24,9 @@ const router = createBrowserRouter([
         element: <FavourateBooks />,
       },
     ],
+    
+        basename: import.meta.env.BASE_URL,
+    
   },
 ]);
 
