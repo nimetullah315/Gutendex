@@ -3,11 +3,13 @@ import App from "../App";
 import Home from "../pages/Home";
 import BookDetails from "../pages/BookDetails";
 import FavourateBooks from "../pages/FavourateBooks";
+import ErrorPage from "../pages/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    errorElement: <ErrorPage />,
     children: [
       {
         index: true,
@@ -18,9 +20,9 @@ const router = createBrowserRouter([
         element: <BookDetails />,
       },
       {
-        path:"/favourates",
-        element:<FavourateBooks />
-      }
+        path: "/favourates",
+        element: <FavourateBooks />,
+      },
     ],
   },
 ]);
